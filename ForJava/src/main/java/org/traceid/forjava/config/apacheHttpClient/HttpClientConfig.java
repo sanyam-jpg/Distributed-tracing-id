@@ -6,13 +6,13 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.traceid.forjava.interceptor.apaceHttpClient.TraceHttpRequestInterceptor;
+import org.traceid.forjava.interceptor.apaceHttpClient.ApacheClientHttpRequestInterceptor;
 
 @Configuration
 public class HttpClientConfig {
 
   @Autowired
-  private TraceHttpRequestInterceptor interceptor;
+  private ApacheClientHttpRequestInterceptor interceptor;
 
   @Bean
   public CloseableHttpClient createHttpClient() {

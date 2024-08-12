@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug = "false">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="CONSOLE_JSON_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" >
+
+            <providers>
+                <!-- Log all StructuredArgument instances -->
+                <arguments/>
+                <timestamp>
+                    <timeZone>UTC</timeZone>
+                </timestamp>
+                <pattern>
+                    {
+                    "severity": "%level",
+                    "request-id": "%X{x-request-id:-}",
+                    "trace-id" : "%X{x-trace-id:-}",
+                    "message": "%message"
+                    }
+                </pattern>
+
+            </providers>
+
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE_JSON_APPENDER"/>
+    </root>
+
+</configuration>

@@ -12,7 +12,7 @@ import java.io.IOException;
 import static org.traceid.forjava.logger.LoggerFilter.TRACE_ID;
 
 @Component
-public class TraceHttpRequestInterceptor implements ClientHttpRequestInterceptor {
+public class RestTemplateHttpRequestInterceptor implements ClientHttpRequestInterceptor {
 
   @Override
   public ClientHttpResponse intercept(HttpRequest request,byte[] body, ClientHttpRequestExecution execution) throws IOException {

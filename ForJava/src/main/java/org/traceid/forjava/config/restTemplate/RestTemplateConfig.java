@@ -5,7 +5,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
-import org.traceid.forjava.interceptor.restTemplate.TraceHttpRequestInterceptor;
+import org.traceid.forjava.interceptor.restTemplate.RestTemplateHttpRequestInterceptor;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -14,7 +14,7 @@ import java.util.Collections;
 public class RestTemplateConfig {
 
   @Autowired
-  private TraceHttpRequestInterceptor interceptor;
+  private RestTemplateHttpRequestInterceptor interceptor;
 
   //bean for default restTemplate
   @Bean

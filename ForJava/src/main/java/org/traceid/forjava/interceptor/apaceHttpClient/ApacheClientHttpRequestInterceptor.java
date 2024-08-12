@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import static org.traceid.forjava.logger.LoggerFilter.TRACE_ID;
 
 @Component
-public class TraceHttpRequestInterceptor implements HttpRequestInterceptor {
+public class ApacheClientHttpRequestInterceptor implements HttpRequestInterceptor {
 
   @Override
   public void process(HttpRequest request, HttpContext context) {
